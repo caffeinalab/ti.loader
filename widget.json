@@ -1,0 +1,13 @@
+{
+	"id": "com.caffeinalab.titanium.loader",
+	"name": "com.caffeinalab.titanium.loader",
+	"description" : "X-Platform Loader indicator for Alloy",
+	"author": "Flavio De Stefano",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2014",
+	"license":"Apache License, Version 2.0",
+	"min-alloy-version": "1.0",
+	"min-titanium-version":"3.0",
+	"tags":"loader,loading,indicator",
+	"platforms":"android,ios"
+}
