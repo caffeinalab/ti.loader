@@ -5,8 +5,8 @@ Private functions
 */
 
 
-function update(msg, cancelable) {
-    $.caffeinaLoaderLabel.text = msg || 'Loading...';
+function update(msg) {
+    $.caffeinaLoaderLabel.text = msg || '';
 }
 
 function cancel(e) {
@@ -22,10 +22,10 @@ function cancel(e) {
     close();
 }
 
-function open() {
+function show() {
     $.caffeinaLoaderMask.open();
     $.caffeinaLoaderIndicator.show();
-    update(args.message, args.cancelable);
+    update(args.message);
 }
 
 function hide() {
@@ -45,7 +45,7 @@ $.caffeinaLoaderMask.addEventListener('click', cancel);
 Exports
 */
 
-exports.open  = open;
+exports.show  = show;
 exports.update = update;
 exports.hide = hide;
 

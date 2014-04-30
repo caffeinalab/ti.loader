@@ -2,7 +2,7 @@ var args = arguments[0] || {};
 var $$;
 
 function show(msg, cancelable) {
-    var _$$;
+    var __$$;
 
     if (OS_IOS) {
 
@@ -10,7 +10,7 @@ function show(msg, cancelable) {
             $$.update(msg, cancelable);
             return;
         }
-        _$$ = Widget.createController('window', {
+        __$$ = Widget.createController('window', {
             message: msg,
             cancelable: cancelable
         });
@@ -19,39 +19,30 @@ function show(msg, cancelable) {
 
         if ($$) {
             $$.message = msg;
+            $$.cancelable = cancelable;
             return;
         }
-        _$$ = Ti.UI.Android.createProgressIndicator({
-            message: msg,
+        __$$ = Ti.UI.Android.createProgressIndicator({
             type: Ti.UI.Android.PROGRESS_INDICATOR_INDETERMINANT,
+            message: msg,
             cancelable: !!cancelable
         });
-
     }
 
-    hide();
-    _$$.open();
-    $$ = _$$;
+    $$.hide();
+    __$$.show();
+
+    $$ = __$$;
 }
 
 function hide() {
-    if (!$$) return;
+    if (!$$) {
+        return;
+    }
+
     $$.hide();
     $$ = null;
 }
-
-Object.defineProperty($, 'visible', {
-    get: function () {
-       return !!$$;
-   },
-   set: function (visible) {
-    if (visible) {
-        show();
-    } else {
-        hide();
-    }
-}
-});
 
 exports.show = show;
 exports.hide = hide;
