@@ -4,10 +4,35 @@ Widget for Titanium Alloy Framework to display a loader X-Platform.
 
 Proudly inspired to https://github.com/FokkeZB/nl.fokkezb.loading, with some edits for Android (using `ProgressIndicator`)
 
+### iOS
+
+![image](http://cl.ly/image/1i0H3K153z3e/loaderios.jpg)
+
+### Android
+
+![image](http://cl.ly/image/2R0H393g393z/loaderand.jpg)
+
+
 ## Installation
+
+#### Via Gittio
 
 ```
 gittio install com.caffeinalab.titanium.loader
+```
+
+#### Via Github
+
+```
+git clone git@github.com:CaffeinaLab/com.caffeinalab.titanium.loader.git app/widgets/com.caffeinalab.titanium.loader
+```
+
+And add in your *config.json*, under `dependencies`:
+
+```
+"dependencies": {
+    "com.caffeinalab.titanium.loader": "*"
+}
 ```
 
 ## Usage
