@@ -29,7 +29,9 @@ function show(msg, cancelable) {
         });
     }
 
-    $$.hide();
+    if ($$) {
+        $$.hide();
+    }
     __$$.show();
 
     $$ = __$$;

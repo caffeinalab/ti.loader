@@ -4,7 +4,6 @@ var args = arguments[0] || {};
 Private functions
 */
 
-
 function update(msg) {
     $.caffeinaLoaderLabel.text = msg || '';
 }
