@@ -1,9 +1,9 @@
 <Alloy>
-	<Window id="caffeinaLoaderMask">
-		<View id="caffeinaLoaderView">
-			<View id="caffeinaLoaderViewInset">
-				<ActivityIndicator id="caffeinaLoaderIndicator" />
-				<Label id="caffeinaLoaderLabel" />
+	<Window id="caffeinaLoaderMask" class="caffeinaLoaderMask">
+		<View id="caffeinaLoaderView" class="caffeinaLoaderView">
+			<View id="caffeinaLoaderViewInset" class="caffeinaLoaderViewInset">
+				<ActivityIndicator id="caffeinaLoaderIndicator" class="caffeinaLoaderIndicator" />
+				<Label id="caffeinaLoaderLabel" text="Wait for it..." class="caffeinaLoaderLabel" text="Wait for it..." />
 			</View>
 		</View>
 	</Window>

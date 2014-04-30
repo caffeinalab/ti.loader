@@ -1,17 +1,17 @@
-"#caffeinaLoaderMask": {
-	backgroundColor: "#A000",
+".caffeinaLoaderMask": {
+	backgroundColor: "#6000",
 	backgroundImage: null,
 	opacity: 1.0,
 	modal: false,
-	fullscreen: true
+	fullscreen: false
 },
-"#caffeinaLoaderView":{
+".caffeinaLoaderView":{
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
-	backgroundColor: '#A000',
+	backgroundColor: '#D000',
 	borderRadius: 10
 },
-"#caffeinaLoaderViewInset": {
+".caffeinaLoaderViewInset": {
 	top: 20,
 	right: 40,
 	bottom: 20,
@@ -20,11 +20,11 @@
 	height: Ti.UI.SIZE,
 	layout: 'vertical'
 },
-"#caffeinaLoaderIndicator": {
+".caffeinaLoaderIndicator": {
 	style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG,
 	color: '#fff'
 },
-"#caffeinaLoaderLabel": {
+".caffeinaLoaderLabel": {
 	top: 20,
 	color: '#fff',
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER

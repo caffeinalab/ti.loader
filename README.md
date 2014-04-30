@@ -6,11 +6,14 @@ Proudly inspired to https://github.com/FokkeZB/nl.fokkezb.loading, with some edi
 
 ## Installation
 
-`gittio install com.caffeinalab.titanium.loader`
+```
+gittio install com.caffeinalab.titanium.loader
+```
 
 ## Usage
 
 ```javascript
+// Create a global reference to the widget
 var LO = Alloy.createWidget('com.caffeinalab.titanium.loader');
 
 // show the loader
