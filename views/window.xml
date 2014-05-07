@@ -3,7 +3,7 @@
 		<View id="caffeinaLoaderView" class="caffeinaLoaderView">
 			<View id="caffeinaLoaderViewInset" class="caffeinaLoaderViewInset">
 				<ActivityIndicator id="caffeinaLoaderIndicator" class="caffeinaLoaderIndicator" />
-				<Label id="caffeinaLoaderLabel" text="Wait for it..." class="caffeinaLoaderLabel" />
+				<Label id="caffeinaLoaderLabel" class="caffeinaLoaderLabel" />
 			</View>
 		</View>
 	</Window>
