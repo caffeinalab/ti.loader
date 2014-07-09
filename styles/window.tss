@@ -28,4 +28,6 @@
 	top: 20,
 	color: '#fff',
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+".caffeinaLoaderImages":{
 }

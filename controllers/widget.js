@@ -10,10 +10,10 @@ function show(msg, cancelable) {
             $$.update(msg, cancelable);
             return;
         }
-        __$$ = Widget.createController('window', {
+        __$$ = Widget.createController('window', _.extend(args, {
             message: msg,
             cancelable: cancelable
-        });
+        }));
 
     } else if (OS_ANDROID) {
 

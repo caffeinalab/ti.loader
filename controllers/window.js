@@ -10,7 +10,7 @@ function update(msg) {
 
 function cancel(e) {
     if (!args.cancelable) {
-        console.warn("This activity can't be canceled");
+        console.warn("com.caffeinalab.titanium.loader: This activity can't be canceled");
         return;
     }
 
@@ -23,12 +23,14 @@ function cancel(e) {
 
 function show() {
     $.caffeinaLoaderMask.open();
-    $.caffeinaLoaderIndicator.show();
+    if (!args.useImages) $.caffeinaLoaderIndicator.show();
+    else $.caffeinaLoaderImages.start();
     update(args.message);
 }
 
 function hide() {
-    $.caffeinaLoaderIndicator.hide();
+    if (!args.useImages) $.caffeinaLoaderIndicator.hide();
+    else $.caffeinaLoaderImages.stop();
     $.caffeinaLoaderMask.close();
     $.destroy();
 }

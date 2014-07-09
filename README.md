@@ -39,7 +39,10 @@ And add in your *config.json*, under `dependencies`:
 
 ```javascript
 // Create a global reference to the widget
-var LO = Alloy.createWidget('com.caffeinalab.titanium.loader');
+var LO = Alloy.createWidget('com.caffeinalab.titanium.loader', {
+	message: "Test",
+	useImages: false
+});
 
 // show the loader
 LO.show('Loading...', false);
