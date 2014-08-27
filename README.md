@@ -37,26 +37,44 @@ And add in your *config.json*, under `dependencies`:
 
 ## Usage
 
+The widget is fully stylable via TSS.
+
+Watch the `window.tss` file.
+
 ```javascript
 // Create a global reference to the widget
 var LO = Alloy.createWidget('com.caffeinalab.titanium.loader', {
 	message: "Test",
+	cancelable: true,
 	useImages: false
 });
 
 // show the loader
-LO.show('Loading...', false);
+
+// Equivalent to { message: 'Loading...', messageRelevance: 1 }
+LO.show('Loading...');
+
+LO.show({
+	message: 'Wait..',
+	messageRelevance: 3,
+	cancelable: true
+});
 
 // hide the loader
 LO.hide();
-
-// update the loader
-LO.update('Wait...', false)
 
 ```
 
 ## API
 
-* `show( [message], [cancelable] ) `: show or update the mask with selected message.
+### `show([opt]) `
 
-* `hide()`: close the mask.
+Show or update the mask with selected message.
+
+* `message`: The message to display
+* `messageRelevance`: Continuous updates to the message without closing the loader will respect the `messageRelevance` property
+* `cancelable`: If is a function, this will be called on cancel. Set to `false` to prohibit user cancelation.
+
+### `hide()`
+
+Close the mask.

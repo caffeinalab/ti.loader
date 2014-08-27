@@ -4,36 +4,42 @@ var args = arguments[0] || {};
 Private functions
 */
 
-function update(msg) {
-    $.caffeinaLoaderLabel.text = msg || '';
-}
-
-function cancel(e) {
-    if (!args.cancelable) {
-        console.warn("com.caffeinalab.titanium.loader: This activity can't be canceled");
-        return;
-    }
-
-    if (_.isFunction(args.cancelable)) {
-        args.cancelable();
-    }
-
-    close();
-}
-
 function show() {
-    $.caffeinaLoaderMask.open();
-    if (!args.useImages) $.caffeinaLoaderIndicator.show();
-    else $.caffeinaLoaderImages.start();
-    update(args.message);
+	$.caffeinaLoaderMask.open();
+
+	if (args.useImages) $.caffeinaLoaderImages.start();
+	else $.caffeinaLoaderIndicator.show();
+
+	update();
 }
 
 function hide() {
-    if (!args.useImages) $.caffeinaLoaderIndicator.hide();
-    else $.caffeinaLoaderImages.stop();
-    $.caffeinaLoaderMask.close();
-    $.destroy();
+	$.caffeinaLoaderMask.close();
+
+	if (args.useImages) $.caffeinaLoaderImages.stop();
+	else $.caffeinaLoaderIndicator.hide();
+
+	$.destroy();
 }
+
+function update(opt) {
+	if (opt && opt.messageRelevance<args.messageRelevance) {
+		opt.message = args.message;
+	}
+
+	args = _.extend(args, opt || {});
+	$.caffeinaLoaderLabel.text = args.message;
+}
+
+function cancel() {
+	if (args.cancelable) {
+		if (_.isFunction(args.cancelable)) args.cancelable();
+		hide();
+	} else {
+		console.warn("com.caffeinalab.titanium.loader: This activity can't be canceled");
+	}
+}
+
 
 /*
 Listeners
@@ -47,6 +53,5 @@ Exports
 */
 
 exports.show  = show;
-exports.update = update;
 exports.hide = hide;
-
+exports.update = update;

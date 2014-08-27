@@ -1,50 +1,22 @@
 var args = arguments[0] || {};
-var $$;
+var $$ = null;
 
-function show(msg, cancelable) {
-    var __$$;
+exports.show = function show(opt) {
+	if (_.isString(opt)) {
+		opt = { message: opt, messageRelevance: 1 };
+	}
 
-    if (OS_IOS) {
+	if ($$) {
+		$$.update(opt);
+	} else {
+		$$ = Widget.createController( OS_ANDROID ? 'android' : 'window', _.extend(args, opt));
+		$$.show();
+	}
+};
 
-        if ($$) {
-            $$.update(msg, cancelable);
-            return;
-        }
-        __$$ = Widget.createController('window', _.extend(args, {
-            message: msg,
-            cancelable: cancelable
-        }));
+exports.hide = function hide() {
+	if (null===$$) return;
 
-    } else if (OS_ANDROID) {
-
-        if ($$) {
-            $$.message = msg;
-            $$.cancelable = cancelable;
-            return;
-        }
-        __$$ = Ti.UI.Android.createProgressIndicator({
-            type: Ti.UI.Android.PROGRESS_INDICATOR_INDETERMINANT,
-            message: msg,
-            cancelable: !!cancelable
-        });
-    }
-
-    if ($$) {
-        $$.hide();
-    }
-    __$$.show();
-
-    $$ = __$$;
-}
-
-function hide() {
-    if (!$$) {
-        return;
-    }
-
-    $$.hide();
-    $$ = null;
-}
-
-exports.show = show;
-exports.hide = hide;
+	$$.hide();
+	$$ = null;
+};
