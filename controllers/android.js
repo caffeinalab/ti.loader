@@ -1,35 +1,39 @@
 var args = arguments[0] || {};
 
+var $PI = Ti.UI.Android.createProgressIndicator({
+	type: Ti.UI.Android.PROGRESS_INDICATOR_INDETERMINANT
+});
+
 /*
 Private functions
 */
 
 function show() {
-	$.pi.show();
+	$PI.show();
 	update();
 }
 
 function hide() {
-	$.pi.hide();
+	$PI.hide();
 	$.destroy();
 }
 
 function update(opt) {
-	if (opt.messageRelevance<args.messageRelevance) {
+	if (opt && opt.messageRelevance<args.messageRelevance) {
 		opt.message = args.message;
 	}
 
 	args = _.extend(args, opt || {});
 
-	$.pi.message = args.message;
-	$.pi.cancelable = args.cancelable;
+	$PI.setMessage(args.message || '');
+	$PI.setCancelable(!!args.cancelable);
 }
 
 /*
 Listeners
 */
 
-$.pi.addEventListener('cancel', function(e){
+$PI.addEventListener('cancel', function(e){
 	if (_.isFunction(args.cancelable)) args.cancelable();
 });
 

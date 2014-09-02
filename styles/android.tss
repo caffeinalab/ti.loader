@@ -1,3 +1,0 @@
-"ProgressIndicator":{
-	type: Ti.UI.Android.PROGRESS_INDICATOR_INDETERMINANT
-}

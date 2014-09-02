@@ -1,4 +1,4 @@
-# Alloy Loader
+# com.caffeinalab.titanium.loader
 
 Widget for Titanium Alloy Framework to display a loader mask.
 
@@ -23,11 +23,7 @@ gittio install com.caffeinalab.titanium.loader
 
 #### Via Github
 
-```
-git clone git@github.com:CaffeinaLab/com.caffeinalab.titanium.loader.git app/widgets/com.caffeinalab.titanium.loader
-```
-
-And add in your *config.json*, under `dependencies`:
+Download the latest release, and add in your *config.json*, under `dependencies`:
 
 ```
 "dependencies": {
