@@ -1,6 +1,6 @@
-# Caffeina.Loader
+# Ti.Loader
 
-###com.caffeinalab.titanium.loader
+### com.caffeinalab.titanium.loader
 
 Titanium Widget to display a loader mask.
 
