@@ -8,7 +8,7 @@ Proudly inspired to https://github.com/FokkeZB/nl.fokkezb.loading, with some edi
 
 ![image](http://cl.ly/image/040L2g0C3j2U/Untitled-1.jpg)
 
-![image](http://cl.ly/image/2m0U3f2X413E/device-2014-10-01-153749_galaxys4_white_portrait.png)
+![image](http://cl.ly/image/032a2A3e0z0b/device-2014-10-01-153749_galaxys4_white_portrait.jpg)
 
 
 ## Installation
