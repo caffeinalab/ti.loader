@@ -1,16 +1,14 @@
-# com.caffeinalab.titanium.loader
+# Caffeina.Loader
 
-Widget for Titanium Alloy Framework to display a loader mask.
+###com.caffeinalab.titanium.loader
+
+Titanium Widget to display a loader mask.
 
 Proudly inspired to https://github.com/FokkeZB/nl.fokkezb.loading, with some edits for Android (using **ProgressIndicator** instead Ti.UI.Window)
 
-### iOS
+![image](http://cl.ly/image/040L2g0C3j2U/Untitled-1.jpg)
 
-![image](http://cl.ly/image/1i0H3K153z3e/loaderios.jpg)
-
-### Android
-
-![image](http://cl.ly/image/2R0H393g393z/loaderand.jpg)
+![image](http://cl.ly/image/2m0U3f2X413E/device-2014-10-01-153749_galaxys4_white_portrait.png)
 
 
 ## Installation
@@ -31,11 +29,23 @@ Download the latest release, and add in your *config.json*, under `dependencies`
 }
 ```
 
-## Usage
+## Fully stylable via TSS
 
-The widget is fully stylable via TSS.
+#### `#caffeinaLoaderMask`
 
-Watch the `window.tss` file.
+The outer mask (Window)
+
+#### `#caffeinaLoaderView`
+
+The mask containing the loader
+
+#### `#caffeinaLoaderLabel`
+
+The label containing the text
+
+Watch the `window.tss/window.xml` file for all options and override the rules with ID instead of class.
+
+## Usage examples
 
 ```javascript
 // Create a global reference to the widget
@@ -67,9 +77,9 @@ LO.hide();
 
 Show or update the mask with selected message.
 
-* `message`: The message to display
-* `messageRelevance`: Continuous updates to the message without closing the loader will respect the `messageRelevance` property
-* `cancelable`: If is a function, this will be called on cancel. Set to `false` to prohibit user cancelation.
+* `message (String)`: The message to display
+* `messageRelevance (Number, default: 0)`: Continuous updates to the message without closing the loader will respect the `messageRelevance` property
+* `cancelable (Boolean, default: true)`: If is a function, this will be called on cancel. Set to `false` to prohibit user cancelation.
 
 ### `hide()`
 
