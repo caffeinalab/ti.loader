@@ -45,7 +45,7 @@ The label containing the text
 
 Watch the `window.tss/window.xml` file for all options and override the rules with ID instead of class.
 
-## Usage examples
+## Usage
 
 ```javascript
 // Create a global reference to the widget
@@ -71,16 +71,26 @@ LO.hide();
 
 ```
 
+## Constructor options
+
+#### `message` (String)
+The message to display
+
+#### `messageRelevance` (Number, default: `0`)
+Continuous updates to the message will respect the `messageRelevance` property.
+
+#### `cancelable` (Boolean, default: `true`)
+If is a `Function`, this will be called on cancel. 
+Set to `false` to prohibit user cancelation of the mask.
+
 ## API
 
-### `show([opt]) `
+#### `show([opt]) `
+Show the mask extending the `constructor options` with the arguments.
 
-Show or update the mask with selected message.
+#### `show([message])`
+This is equivalent to `show({ message: [message] })`
 
-* `message (String)`: The message to display
-* `messageRelevance (Number, default: 0)`: Continuous updates to the message without closing the loader will respect the `messageRelevance` property
-* `cancelable (Boolean, default: true)`: If is a function, this will be called on cancel. Set to `false` to prohibit user cancelation.
+#### `hide()`
 
-### `hide()`
-
-Close the mask.
+Closes the mask.
