@@ -6,9 +6,7 @@ Titanium Widget to display a loader mask.
 
 Proudly inspired to https://github.com/FokkeZB/nl.fokkezb.loading, with some edits for Android (using **ProgressIndicator** instead Ti.UI.Window)
 
-![image](http://cl.ly/image/040L2g0C3j2U/Untitled-1.jpg)
-
-![image](http://cl.ly/image/032a2A3e0z0b/device-2014-10-01-153749_galaxys4_white_portrait.jpg)
+![image](http://cl.ly/image/2p052S2J472G/10.jpg)
 
 
 ## Installation
