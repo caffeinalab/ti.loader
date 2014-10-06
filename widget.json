@@ -1,7 +1,7 @@
 {
 	"id": "com.caffeinalab.titanium.loader",
-	"name": "com.caffeinalab.titanium.loader",
-	"description" : "X-Platform Loader indicator for Alloy",
+	"name": "Ti.Loader",
+	"description" : "Alloy+Titanium widget to display a loader mask for you applications.",
 	"author": "Flavio De Stefano",
 	"version": "1.2.2",
 	"copyright":"Copyright (c) 2014",
