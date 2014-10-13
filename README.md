@@ -29,15 +29,15 @@ Download the latest release, and add in your *config.json*, under `dependencies`
 
 ## Fully stylable via TSS
 
-#### `#caffeinaLoaderMask`
+#### `#cfn_LoaderMask`
 
 The outer mask (Window)
 
-#### `#caffeinaLoaderView`
+#### `#cfn_LoaderView`
 
 The mask containing the loader
 
-#### `#caffeinaLoaderLabel`
+#### `#cfn_LoaderLabel`
 
 The label containing the text
 
@@ -78,7 +78,7 @@ The message to display
 Continuous updates to the message will respect the `messageRelevance` property.
 
 #### `cancelable` (Boolean, default: `true`)
-If is a `Function`, this will be called on cancel. 
+If is a `Function`, this will be called on cancel.
 Set to `false` to prohibit user cancelation of the mask.
 
 ## API
