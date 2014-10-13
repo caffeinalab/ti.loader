@@ -1,10 +1,10 @@
 <Alloy>
-	<Window id="caffeinaLoaderMask" class="caffeinaLoaderMask">
-		<View id="caffeinaLoaderView" class="caffeinaLoaderView">
-			<View id="caffeinaLoaderViewInset" class="caffeinaLoaderViewInset">
-				<ActivityIndicator id="caffeinaLoaderIndicator" class="caffeinaLoaderIndicator" />
-				<ImageView id="caffeinaLoaderImages" class="caffeinaLoaderImages" />
-				<Label id="caffeinaLoaderLabel" class="caffeinaLoaderLabel" />
+	<Window id="cfn_LoaderMask" class="cfn_LoaderMask">
+		<View id="cfn_LoaderView" class="cfn_LoaderView">
+			<View id="cfn_LoaderViewInset" class="cfn_LoaderViewInset">
+				<ActivityIndicator id="cfn_LoaderIndicator" class="cfn_LoaderIndicator" />
+				<ImageView id="cfn_LoaderImages" class="cfn_LoaderImages" />
+				<Label id="cfn_LoaderLabel" class="cfn_LoaderLabel" />
 			</View>
 		</View>
 	</Window>

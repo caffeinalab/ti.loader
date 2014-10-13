@@ -5,22 +5,22 @@ Private functions
 */
 
 function show() {
-	$.caffeinaLoaderMask.opacity = 0;
-	$.caffeinaLoaderMask.addEventListener('open', function() { $.caffeinaLoaderMask.animate({ opacity: 1 }); });
-	$.caffeinaLoaderMask.open();
+	$.cfn_LoaderMask.opacity = 0;
+	$.cfn_LoaderMask.addEventListener('open', function() { $.cfn_LoaderMask.animate({ opacity: 1 }); });
+	$.cfn_LoaderMask.open();
 
-	if (args.useImages) $.caffeinaLoaderImages.start();
-	else $.caffeinaLoaderIndicator.show();
+	if (args.useImages) $.cfn_LoaderImages.start();
+	else $.cfn_LoaderIndicator.show();
 
 	update();
 }
 
 function hide() {
-	$.caffeinaLoaderMask.animate({ opacity: 0 }, function(){
-		if (args.useImages) $.caffeinaLoaderImages.stop();
-		else $.caffeinaLoaderIndicator.hide();
+	$.cfn_LoaderMask.animate({ opacity: 0 }, function(){
+		if (args.useImages) $.cfn_LoaderImages.stop();
+		else $.cfn_LoaderIndicator.hide();
 
-		$.caffeinaLoaderMask.close();
+		$.cfn_LoaderMask.close();
 		$.destroy();
 		$.off();
 	});
@@ -32,12 +32,12 @@ function update(opt) {
 	}
 
 	_.extend(args, opt || {});
-	$.caffeinaLoaderLabel.text = args.message;
+	$.cfn_LoaderLabel.text = args.message;
 }
 
 function cancel() {
 	if (args.cancelable === false) {
-		console.warn("com.caffeinalab.titanium.loader: This activity can't be canceled");
+		console.warn("com.cfn_lab.titanium.loader: This activity can't be canceled");
 		return;
 	}
 
@@ -50,7 +50,7 @@ function cancel() {
 Listeners
 */
 
-$.caffeinaLoaderMask.addEventListener('click', cancel);
+$.cfn_LoaderMask.addEventListener('click', cancel);
 
 
 /*
