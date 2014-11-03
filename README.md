@@ -21,7 +21,7 @@ gittio install com.caffeinalab.titanium.loader
 
 Download the latest release, and add in your *config.json*, under `dependencies`:
 
-```
+```json
 "dependencies": {
     "com.caffeinalab.titanium.loader": "*"
 }
