@@ -1,24 +1,38 @@
 var args = arguments[0] || {};
 
+exports.visible = false;
+
 /*
 Private functions
 */
 
 function show() {
+	exports.visible = true;
+
 	$.cfn_LoaderMask.opacity = 0;
-	$.cfn_LoaderMask.addEventListener('open', function() { $.cfn_LoaderMask.animate({ opacity: 1 }); });
+	$.cfn_LoaderMask.addEventListener('open', function() {
+		$.cfn_LoaderMask.animate({ opacity: 1 });
+	});
 	$.cfn_LoaderMask.open();
 
-	if (args.useImages) $.cfn_LoaderImages.start();
-	else $.cfn_LoaderIndicator.show();
+	if (args.useImages) {
+		$.cfn_LoaderImages.start();
+	} else {
+		$.cfn_LoaderIndicator.show();
+	}
 
 	update();
 }
 
 function hide() {
-	$.cfn_LoaderMask.animate({ opacity: 0 }, function(){
-		if (args.useImages) $.cfn_LoaderImages.stop();
-		else $.cfn_LoaderIndicator.hide();
+	exports.visible = false;
+
+	$.cfn_LoaderMask.animate({ opacity: 0 }, function() {
+		if (args.useImages) {
+			$.cfn_LoaderImages.stop();
+		} else {
+			$.cfn_LoaderIndicator.hide();
+		}
 
 		$.cfn_LoaderMask.close();
 		$.destroy();

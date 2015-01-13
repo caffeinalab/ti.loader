@@ -3,7 +3,7 @@
 	"name": "Ti.Loader",
 	"description" : "Alloy+Titanium widget to display a loader mask for you applications.",
 	"author": "Flavio De Stefano",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"copyright":"Copyright (c) 2014",
 	"license":"Apache License, Version 2.0",
 	"min-alloy-version": "1.0",

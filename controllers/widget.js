@@ -6,7 +6,7 @@ exports.show = function show(opt) {
 		opt = { message: opt, messageRelevance: 1 };
 	}
 
-	if ($$) {
+	if ($$ && $$.visible) {
 		$$.update(opt);
 	} else {
 		$$ = Widget.createController( OS_ANDROID ? 'android' : 'window', _.extend(args, opt));
@@ -15,7 +15,7 @@ exports.show = function show(opt) {
 };
 
 exports.hide = function hide() {
-	if (null===$$) return;
+	if (null === $$) return;
 
 	$$.hide();
 	$$ = null;
