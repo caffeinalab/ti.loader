@@ -1,7 +1,7 @@
 var args = arguments[0] || {};
 var $$ = null;
 
-exports.show = function show(opt) {
+exports.show = function(opt, callback) {
 	if (_.isString(opt)) {
 		opt = { message: opt, messageRelevance: 1 };
 	}
@@ -10,11 +10,11 @@ exports.show = function show(opt) {
 		$$.update(opt);
 	} else {
 		$$ = Widget.createController( OS_ANDROID ? 'android' : 'window', _.extend(args, opt));
-		$$.show();
+		$$.show(callback);
 	}
 };
 
-exports.hide = function hide() {
+exports.hide = function() {
 	if (null === $$) return;
 
 	$$.hide();

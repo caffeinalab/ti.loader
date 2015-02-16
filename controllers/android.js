@@ -8,9 +8,11 @@ var $PI = Ti.UI.Android.createProgressIndicator({
 Private functions
 */
 
-function show() {
+function show(callback) {
 	$PI.show();
 	update();
+
+	if (_.isFunction(callback)) callback();
 }
 
 function hide() {

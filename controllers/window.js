@@ -6,12 +6,13 @@ exports.visible = false;
 Private functions
 */
 
-function show() {
+function show(callback) {
 	exports.visible = true;
 
 	$.cfn_LoaderMask.opacity = 0;
 	$.cfn_LoaderMask.addEventListener('open', function() {
 		$.cfn_LoaderMask.animate({ opacity: 1 });
+		if (_.isFunction(callback)) callback();
 	});
 	$.cfn_LoaderMask.open();
 
