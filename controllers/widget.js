@@ -3,19 +3,22 @@ var $$ = null;
 
 exports.show = function(opt, callback) {
 	if (_.isString(opt)) {
-		opt = { message: opt, messageRelevance: 1 };
+		opt = {
+			message: opt,
+			messageRelevance: 1
+		};
 	}
 
-	if ($$ && $$.visible) {
+	if ($$ != null && $$.visible == true) {
 		$$.update(opt);
 	} else {
-		$$ = Widget.createController( OS_ANDROID ? 'android' : 'window', _.extend(args, opt));
+		$$ = Widget.createController(OS_ANDROID ? 'android' : 'window', _.extend(args, opt));
 		$$.show(callback);
 	}
 };
 
 exports.hide = function() {
-	if (null === $$) return;
+	if (null == $$) return;
 
 	$$.hide();
 	$$ = null;

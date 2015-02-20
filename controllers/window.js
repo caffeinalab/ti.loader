@@ -1,20 +1,13 @@
 var args = arguments[0] || {};
 
-exports.visible = false;
+$.visible = false;
 
-/*
-Private functions
-*/
-
-function show(callback) {
-	exports.visible = true;
+$.show = function(callback) {
+	$.visible = true;
 
 	$.cfn_LoaderMask.opacity = 0;
-	$.cfn_LoaderMask.addEventListener('open', function() {
-		$.cfn_LoaderMask.animate({ opacity: 1 });
-		if (_.isFunction(callback)) callback();
-	});
 	$.cfn_LoaderMask.open();
+	$.cfn_LoaderMask.animate({ opacity: 1 });
 
 	if (args.useImages) {
 		$.cfn_LoaderImages.start();
@@ -22,11 +15,12 @@ function show(callback) {
 		$.cfn_LoaderIndicator.show();
 	}
 
-	update();
-}
+	$.update();
+	if (_.isFunction(callback)) callback();
+};
 
-function hide() {
-	exports.visible = false;
+$.hide = function() {
+	$.visible = false;
 
 	$.cfn_LoaderMask.animate({ opacity: 0 }, function() {
 		if (args.useImages) {
@@ -39,39 +33,25 @@ function hide() {
 		$.destroy();
 		$.off();
 	});
-}
+};
 
-function update(opt) {
+$.update = function(opt) {
 	if (opt != null && opt.messageRelevance < args.messageRelevance) {
 		opt.message = args.message;
 	}
 
 	_.extend(args, opt || {});
 	$.cfn_LoaderLabel.text = args.message;
-}
+};
 
-function cancel() {
+$.cancel = function() {
 	if (args.cancelable === false) {
 		console.warn("com.cfn_lab.titanium.loader: This activity can't be canceled");
 		return;
 	}
 
 	if (_.isFunction(args.cancelable)) args.cancelable();
-	hide();
-}
+	$.hide();
+};
 
-
-/*
-Listeners
-*/
-
-$.cfn_LoaderMask.addEventListener('click', cancel);
-
-
-/*
-Exports
-*/
-
-exports.show  = show;
-exports.hide = hide;
-exports.update = update;
+$.cfn_LoaderMask.addEventListener('click', $.cancel);

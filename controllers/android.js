@@ -4,24 +4,21 @@ var $PI = Ti.UI.Android.createProgressIndicator({
 	type: Ti.UI.Android.PROGRESS_INDICATOR_INDETERMINANT
 });
 
-/*
-Private functions
-*/
-
-function show(callback) {
+$.show = function(callback) {
 	$PI.show();
-	update();
 
+	$.update();
 	if (_.isFunction(callback)) callback();
-}
+};
 
-function hide() {
+$.hide = function() {
 	$PI.hide();
 	$.destroy();
-}
+	$.off();
+};
 
-function update(opt) {
-	if (opt && opt.messageRelevance<args.messageRelevance) {
+$.update = function(opt) {
+	if (opt && opt.messageRelevance < args.messageRelevance) {
 		opt.message = args.message;
 	}
 
@@ -29,20 +26,8 @@ function update(opt) {
 
 	$PI.setMessage(args.message || '');
 	$PI.setCancelable(!!args.cancelable);
-}
-
-/*
-Listeners
-*/
+};
 
 $PI.addEventListener('cancel', function(e){
 	if (_.isFunction(args.cancelable)) args.cancelable();
 });
-
-/*
-Exports
-*/
-
-exports.show  = show;
-exports.hide = hide;
-exports.update = update;
