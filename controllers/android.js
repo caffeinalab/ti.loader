@@ -4,15 +4,21 @@ var $PI = Ti.UI.Android.createProgressIndicator({
 	type: Ti.UI.Android.PROGRESS_INDICATOR_INDETERMINANT
 });
 
-$.show = function(callback) {
-	$PI.show();
+$.visible = false;
 
+$.show = function(callback) {
+	$.visible = true;
+
+	$PI.show();
 	$.update();
 	if (_.isFunction(callback)) callback();
 };
 
 $.hide = function() {
+	$.visible = false;
+
 	$PI.hide();
+
 	$.destroy();
 	$.off();
 };
