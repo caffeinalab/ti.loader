@@ -18,7 +18,7 @@ exports.show = function(opt, callback) {
 };
 
 exports.hide = function() {
-	if (null == $$) return;
+	if (null === $$) return;
 
 	$$.hide();
 	$$ = null;

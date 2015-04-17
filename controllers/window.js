@@ -46,7 +46,7 @@ $.update = function(opt) {
 
 $.cancel = function() {
 	if (args.cancelable === false) {
-		console.warn("com.cfn_lab.titanium.loader: This activity can't be canceled");
+		Ti.API.warn("com.caffeinalab.titanium.loader: This activity can't be cancelled!");
 		return;
 	}
 
@@ -54,4 +54,4 @@ $.cancel = function() {
 	$.hide();
 };
 
-$.cfn_LoaderMask.addEventListener('click', $.cancel);
+$.cfn_LoaderMask.addEventListener('touchstart', $.cancel);
