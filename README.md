@@ -58,10 +58,16 @@ var LO = Alloy.createWidget('com.caffeinalab.titanium.loader', {
 // Equivalent to { message: 'Loading...', messageRelevance: 1 }
 LO.show('Loading...');
 
+// ... or Pass an object
 LO.show({
 	message: 'Wait..',
 	messageRelevance: 3,
 	cancelable: true
+});
+
+// ... and optionally a complete callback
+LO.show(null, function() {
+	alert('Ya Man!');
 });
 
 // hide the loader
@@ -69,26 +75,42 @@ LO.hide();
 
 ```
 
-## Constructor options
+## Constructor and `.show` options
 
 #### `message` (String)
+
 The message to display
 
 #### `messageRelevance` (Number, default: `0`)
+
 Continuous updates to the message will respect the `messageRelevance` property.
 
 #### `cancelable` (Boolean, default: `true`)
+
 If is a `Function`, this will be called on cancel.
-Set to `false` to prohibit user cancelation of the mask.
+
+Set to explicit `false` to prohibit user cancelation of the mask.
+
+#### `onInit` (Function, default: `null`)
+
+Function to call before the window appear, so you can edit UI.
+
+`e.ui` will be current UI element, so *be careful* to switch between OSes.
 
 ## API
 
-#### `show([opt]) `
+#### `.show([opt:Object], [callback:Function]) `
+
 Show the mask extending the `constructor options` with the arguments.
 
-#### `show([message])`
+#### `.show([message:String], [callback:Function])`
+
 This is equivalent to `show({ message: [message] })`
 
-#### `hide()`
+#### `.update([opt:Object])`
+
+Update the previous passed options and the UI.
+
+#### `.hide()`
 
 Closes the mask.

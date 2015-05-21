@@ -1,7 +1,19 @@
-var args = arguments[0] || {};
-var $$ = null;
+var args = arguments[0] || {
+	cancelable: true,
+	message: '',
+	messageRelevance: 0,
+	fullscreen: false,
+	onInit: null
+};
+var $instance = null;
 
+/**
+ * @method show
+ * @param  {Object}   opt
+ * @param  {Function} callback
+ */
 exports.show = function(opt, callback) {
+	opt = opt || {};
 	if (_.isString(opt)) {
 		opt = {
 			message: opt,
@@ -9,17 +21,21 @@ exports.show = function(opt, callback) {
 		};
 	}
 
-	if ($$ != null && $$.visible == true) {
-		$$.update(opt);
+	if ($instance != null && $instance.visible == true) {
+		$instance.update(opt);
 	} else {
-		$$ = Widget.createController(OS_ANDROID ? 'android' : 'window', _.extend(args, opt));
-		$$.show(callback);
+		$instance = Widget.createController(OS_ANDROID ? 'android' : 'window', _.extend({}, args, opt));
+		$instance.show(callback);
 	}
 };
 
+/**
+ * @method  hide
+ * Hide the loader
+ */
 exports.hide = function() {
-	if (null == $$) return;
+	if ($instance === null) return;
 
-	$$.hide();
-	$$ = null;
+	$instance.hide();
+	$instance = null;
 };
