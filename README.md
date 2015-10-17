@@ -97,6 +97,10 @@ Function to call before the window appear, so you can edit UI.
 
 `e.ui` will be current UI element, so *be careful* to switch between OSes.
 
+#### `customView` (Ti.UI.View, default: `null`)
+
+Use a custom view instead of default loader / image
+
 ## API
 
 #### `.show([opt:Object], [callback:Function]) `

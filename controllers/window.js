@@ -6,6 +6,17 @@ var args = arguments[0] || {};
 
 $.visible = false;
 
+if (args.useImages == true) {
+	$.cfn_Method.remove( $.cfn_LoaderIndicator );
+} else if (args.customView != null) {
+	$.cfn_LoaderViewInset.replaceAt({
+		view: args.customView,
+		position: 0
+	});
+} else {
+	$.cfn_Method.remove( $.cfn_LoaderImages );
+}
+
 /**
  * @method show
  * Show the loader
@@ -20,6 +31,7 @@ $.show = function(callback) {
 
 	if (args.useImages == true) {
 		$.cfn_LoaderImages.start();
+	} else if (args.customView != null) {
 	} else {
 		$.cfn_LoaderIndicator.show();
 	}
@@ -37,6 +49,7 @@ $.hide = function() {
 	$.cfn_LoaderMask.animate({ opacity: 0 }, function() {
 		if (args.useImages == true) {
 			$.cfn_LoaderImages.stop();
+		} else if (args.customView) {
 		} else {
 			$.cfn_LoaderIndicator.hide();
 		}

@@ -1,10 +1,15 @@
-var args = arguments[0] || {
+var args = arguments[0] || {};
+
+_.defaults(args, {
 	cancelable: true,
 	message: '',
 	messageRelevance: 0,
 	fullscreen: false,
-	onInit: null
-};
+	onInit: null,
+	useImages: false,
+	customView: null
+});
+
 var $instance = null;
 
 /**

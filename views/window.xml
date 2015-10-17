@@ -2,8 +2,10 @@
 	<Window id="cfn_LoaderMask" class="cfn_LoaderMask">
 		<View id="cfn_LoaderView" class="cfn_LoaderView">
 			<View id="cfn_LoaderViewInset" class="cfn_LoaderViewInset">
-				<ActivityIndicator id="cfn_LoaderIndicator" class="cfn_LoaderIndicator" />
-				<ImageView id="cfn_LoaderImages" class="cfn_LoaderImages" />
+				<View id="cfn_Method" height="Ti.UI.SIZE">
+					<ActivityIndicator id="cfn_LoaderIndicator" class="cfn_LoaderIndicator" />
+					<ImageView id="cfn_LoaderImages" class="cfn_LoaderImages" />
+				</View>
 				<Label id="cfn_LoaderLabel" class="cfn_LoaderLabel" />
 			</View>
 		</View>

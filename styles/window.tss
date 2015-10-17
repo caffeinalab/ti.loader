@@ -30,4 +30,6 @@
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 },
 ".cfn_LoaderImages":{
+},
+".cfn_customView":{
 }
