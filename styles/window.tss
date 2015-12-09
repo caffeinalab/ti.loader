@@ -21,7 +21,7 @@
 	layout: 'vertical'
 },
 ".cfn_LoaderIndicator": {
-	style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG,
+	style: Ti.UI.ActivityIndicatorStyle.BIG,
 	color: '#fff'
 },
 ".cfn_LoaderLabel": {
